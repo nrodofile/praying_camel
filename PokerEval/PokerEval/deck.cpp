@@ -50,7 +50,7 @@ Deck::~Deck(){
  *              from the deck
  */
 Card* Deck::DealNextCard(){
-    if(cardsDealt > CARDS_IN_DECK){
+    if(cardsDealt >= CARDS_IN_DECK){
         return NULL;
     }
     return deck[cardsDealt++];
