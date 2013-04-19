@@ -2,6 +2,7 @@
 <Bucket
    type = "1"
    version = "1.0">
+<<<<<<< HEAD
    <FileBreakpoints>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -82,4 +83,6 @@
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
+=======
+>>>>>>> Creation of Hand class
 </Bucket>

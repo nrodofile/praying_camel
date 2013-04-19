@@ -11,7 +11,7 @@
 /*--------------------------------------------------
  *  Deck Constructor
  *--------------------------------------------------
- *  No Argument constructor – Creates an array of 
+ *  No Argument constructor – Creates Vecter of 
  *  Card* objects and initialises them.
  *  Initialises cardsDealt to the start of the deck.
  */
@@ -28,7 +28,7 @@ Deck::Deck(){
 /*--------------------------------------------------
  *  Deck destructor
  *--------------------------------------------------
- *  Deletes the contents of the deck array of
+ *  Deletes the contents of the deck Vecter of
  *  Card*
  */
 Deck::~Deck(){

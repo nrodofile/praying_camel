@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22C8F98A1720E54D00533E22 /* hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22C8F9881720E54D00533E22 /* hand.cpp */; };
 		22D0D73E171AAF8200FE8D08 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22D0D73D171AAF8200FE8D08 /* main.cpp */; };
 		22D0D740171AAF8200FE8D08 /* PokerEval.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22D0D73F171AAF8200FE8D08 /* PokerEval.1 */; };
 		22D0D74B171AB09100FE8D08 /* random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22D0D749171AB09000FE8D08 /* random.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22C8F9881720E54D00533E22 /* hand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hand.cpp; sourceTree = "<group>"; };
+		22C8F9891720E54D00533E22 /* hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hand.h; sourceTree = "<group>"; };
 		22D0D73A171AAF8200FE8D08 /* PokerEval */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PokerEval; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D0D73D171AAF8200FE8D08 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		22D0D73F171AAF8200FE8D08 /* PokerEval.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = PokerEval.1; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				22D0D74D171AB6A500FE8D08 /* card.h */,
 				22D0D74F171ABA3B00FE8D08 /* deck.cpp */,
 				22D0D750171ABA3B00FE8D08 /* deck.h */,
+				22C8F9881720E54D00533E22 /* hand.cpp */,
+				22C8F9891720E54D00533E22 /* hand.h */,
 			);
 			path = PokerEval;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				22D0D74B171AB09100FE8D08 /* random.cpp in Sources */,
 				22D0D74E171AB6A500FE8D08 /* card.cpp in Sources */,
 				22D0D751171ABA3B00FE8D08 /* deck.cpp in Sources */,
+				22C8F98A1720E54D00533E22 /* hand.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +240,7 @@
 				22D0D745171AAF8200FE8D08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
