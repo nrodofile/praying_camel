@@ -2,7 +2,6 @@
 <Bucket
    type = "1"
    version = "1.0">
-<<<<<<< HEAD
    <FileBreakpoints>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -22,11 +21,11 @@
          ignoreCount = "50"
          continueAfterRunningActions = "No"
          filePath = "PokerEval/main.cpp"
-         timestampString = "387869779.691739"
+         timestampString = "388038689.71518"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
          landmarkName = "main(int argc, char *argv[])"
          landmarkType = "7">
       </FileBreakpoint>
@@ -35,33 +34,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PokerEval/main.cpp"
-         timestampString = "387872195.744108"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
-         landmarkName = "main(int argc, char *argv[])"
-         landmarkType = "7">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PokerEval/deck.cpp"
-         timestampString = "387910485.682311"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "Deck::DealNextCard()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PokerEval/main.cpp"
-         timestampString = "387910503.038836"
+         timestampString = "388038689.71518"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "67"
@@ -69,20 +42,5 @@
          landmarkName = "main(int argc, char *argv[])"
          landmarkType = "7">
       </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "52"
-         continueAfterRunningActions = "No"
-         filePath = "PokerEval/deck.cpp"
-         timestampString = "387910536.342621"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
-         landmarkName = "Deck::DealNextCard()"
-         landmarkType = "5">
-      </FileBreakpoint>
    </FileBreakpoints>
-=======
->>>>>>> Creation of Hand class
 </Bucket>

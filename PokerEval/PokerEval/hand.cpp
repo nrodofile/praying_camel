@@ -13,26 +13,35 @@
  *--------------------------------------------------
  *  Sets player ID  
  */
-Hand::Hand(int player){
-	
+Hand::Hand(int playerID){
+	hand = new Card*[CARDS_IN_HAND];
+	this->playerId = playerID;
+	totalCards = 0;
 }
 
 /*
  *	~Hand - Distructor
  *--------------------------------------------------
- *
+ *	Deletes the hand vecter
  */
 Hand::~Hand(){
-	
+    delete hand;
 }
 
 /*
  *	AddCard
  *--------------------------------------------------
- *
+ *	Adds card to hand, checks if the hand 
+ *	full before adding the card to the hand
  */
 void Hand::AddCard(Card *card){
-	
+	if(totalCards >= CARDS_IN_HAND){
+		cerr << "Player " << to_string(playerId) <<
+				"'s Hand is FULL!!" << endl;
+	}else{
+		hand[totalCards] = card;
+		totalCards++;
+	}
 }
 
 /*
@@ -44,6 +53,10 @@ void Hand::AddCard(Card *card){
  */
 void Hand::Evaluate(){
 	
+}
+
+void Hand::ClearHand(){
+	totalCards = 0;
 }
 
 /*
@@ -67,6 +80,12 @@ int Hand::GetValue(){
  *  Returns: All the cards in the hand
  */
 string Hand::ToString(){
-	return "hand";
+	string playersHand;
+	for (int card = FIRST; card < totalCards; card++){
+		playersHand += hand[card]->ToString() + "\t";
+	}
+
+	return 	"Player " + to_string(playerId) +
+					"\t" + playersHand;
 }
 

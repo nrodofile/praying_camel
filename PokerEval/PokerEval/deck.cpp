@@ -50,7 +50,8 @@ Deck::~Deck(){
  *              from the deck
  */
 Card* Deck::DealNextCard(){
-    if(cardsDealt >= CARDS_IN_DECK){
+    if(cardsDealt > CARDS_IN_DECK){
+		cerr << "Deck out of cards" << endl;
         return NULL;
     }
     return deck[cardsDealt++];
