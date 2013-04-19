@@ -12,6 +12,11 @@
 #include <iostream>
 #include "card.h"
 
+enum HandType{
+	HIGH_CARD, ONE_PAIR, TWO_PAIR, THREE_OF_A_KIND,
+	STRAIGHT, FLUSH, FULL_HOUSE, FOUR_OF_A_KIND,
+	STRAIGHT_FLUSH
+};
 
 class Hand	{
 public:
@@ -20,20 +25,16 @@ public:
 	void AddCard(Card *card);
 	void Evaluate();
 	int GetValue();
+	HandType GetHandType();
 	void ClearHand();
 	string ToString();
 private:
-	enum HandType{
-		HIGH_CARD, ONE_PAIR, TWO_PAIR, THREE_OF_A_KIND,
-		STRAIGHT, FLUSH, FULL_HOUSE, FOUR_OF_A_KIND,
-		STRAIGHT_FLUSH
-	};
-	
 	const int CARDS_IN_HAND = 5;
 	const int FIRST = 0;
 	int playerId;
 	int totalCards;
 	Card** hand;
+	HandType handType;
 };
 
 #endif /* defined(__PokerEval__hand__) */

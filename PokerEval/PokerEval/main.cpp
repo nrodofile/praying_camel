@@ -14,9 +14,11 @@
 
 #include "deck.h"
 #include "card.h"
-#include "random.h" //remove
 #include "hand.h"
 //#include "handcomparer.h"
+
+#include "cardComparer.h"
+
 
 using namespace std;
 
@@ -39,11 +41,11 @@ int main(int argc, char *argv[]) {
 //
 //    random_rank->~Random();
 //    random_suit->~Random();
-    
+//
 //    cout << "Deal Test" << endl;
-    
-    Deck *deck = new Deck();
-    
+//
+//    Deck *deck = new Deck();
+//
 //    Card *card = deck->DealNextCard();
 //    //cout << card->ToString() << endl;
 //    
@@ -52,12 +54,12 @@ int main(int argc, char *argv[]) {
 //        cout << card->ToString() << endl;
 //    }
 //    cout << "shuffle Test" << endl;
-    
-    cout << "shuffle Test" << endl;
-    
-    deck->Shuffle();
-    deck->DisplayDeck();
-    
+//    
+//    cout << "shuffle Test" << endl;
+//    
+//    deck->Shuffle();
+//    deck->DisplayDeck();
+//    
 //    Card *card;
     //cout << card->ToString() << endl;
 //	cout << "shuffle deal Test" << endl;
@@ -73,34 +75,41 @@ int main(int argc, char *argv[]) {
 //            deck->Shuffle();
 //        }
 //    }
-
-	Hand **player = new Hand*[PLAYERS];
-	for(int p = 0; p < PLAYERS; p++){
-		player[p] = new Hand(p+1);
+//	Hand **player = new Hand*[PLAYERS];
+//	for(int p = 0; p < PLAYERS; p++){
+//		player[p] = new Hand(p+1);
+//	}
+//	
+//	cout << "second" << endl;
+//	deck->Shuffle();
+//	deck->DisplayDeck();
+//	
+//	for(int d = 0; d < CARDS_PER_PLAYER; d++){
+//		for(int p = 0; p < PLAYERS; p++){
+//			player[p]->AddCard(deck->DealNextCard());
+//		}
+//	}
+//
+//	for(int i = 0; i < PLAYERS; i++){
+//		cout << player[i]->ToString() << endl;
+//	}
+//	
+//	for(int i = 0; i < PLAYERS; i++){
+//		player[i]->ClearHand();
+//	}
+//
+//	for(int i = 0; i < PLAYERS; i++){
+//		delete player[i];
+//	}
+//		delete player;
+	Card *card1 = new Card((Rank)9,(Suit)1);
+	Card *card2 = new Card((Rank)8,(Suit)2);
+	CardComparer compare = CardComparer();
+	if(compare.operator()(card2, card1)){
+		cout << "yes";
+	}else{
+		cout << "no";
 	}
-	
-	cout << "second" << endl;
-	deck->Shuffle();
-	deck->DisplayDeck();
-	
-	for(int d = 0; d < CARDS_PER_PLAYER; d++){
-		for(int p = 0; p < PLAYERS; p++){
-			player[p]->AddCard(deck->DealNextCard());
-		}
-	}
-
-	for(int i = 0; i < PLAYERS; i++){
-		cout << player[i]->ToString() << endl;
-	}
-	
-	for(int i = 0; i < PLAYERS; i++){
-		player[i]->ClearHand();
-	}
-
-	for(int i = 0; i < PLAYERS; i++){
-		delete player[i];
-	}
-		delete player;
 	
     return 0;
     

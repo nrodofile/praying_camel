@@ -72,6 +72,18 @@ int Hand::GetValue(){
 }
 
 /*
+ *	GetValue
+ *--------------------------------------------------
+ *  Pre:	the request of the handType
+ *  Post:
+ *--------------------------------------------------
+ *  Returns: The hand type of the hand
+ */
+HandType Hand::GetHandType(){
+	return handType;
+}
+
+/*
  *	ToString
  *--------------------------------------------------
  *  Pre:
