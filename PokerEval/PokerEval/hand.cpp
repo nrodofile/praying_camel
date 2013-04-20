@@ -51,7 +51,53 @@ void Hand::AddCard(Card *card){
 void Hand::Evaluate(){
 	
 	sort(hand.begin(), hand.end(), CardComparer());
+	EvaluateType();
 	
+}
+
+void Hand::EvaluateType(){
+	
+	//STRAIGHT
+	int straight = FIRST;
+	for (int card = FIRST; card < hand.size()-1; card++){
+		if(hand.at(card+1)->GetRank() == hand.at(card)->GetRank()+1){
+			straight++;
+		}else{
+			break;
+		}
+	}
+	if(straight == CARDS_IN_HAND-1){
+		handType = STRAIGHT;
+	}
+	
+	int flush = FIRST;
+	for (int card = FIRST; card < hand.size()-1; card++){
+		if(hand.at(card)->GetSuit() == hand.at(FIRST)->GetSuit()){
+			flush++;
+		}else{
+			break;
+		}
+	}
+	if(flush == CARDS_IN_HAND-1){
+		handType = FLUSH;
+	}
+		
+	//FOUR_OF_A_KIND,
+	//FULL_HOUSE,
+	//FLUSH,
+	//STRAIGHT,
+	//THREE_OF_A_KIND,
+	//TWO_PAIRS,
+	//ONE_PAIR,
+	//HIGH_CARD,
+
+
+
+
+
+
+
+
 }
 
 /*
@@ -98,6 +144,6 @@ string Hand::ToString(){
 	}
 
 	return 	"Player " + to_string(playerId) +
-					"\t" + playersHand;
+					"\t" + playersHand + HAND_TYPE[handType];
 }
 

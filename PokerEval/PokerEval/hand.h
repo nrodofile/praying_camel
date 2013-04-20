@@ -43,7 +43,7 @@ private:
 	string type;
 	vector<Card*> hand;
 	HandType handType;
-	
+	void EvaluateType();
 	
 };
 

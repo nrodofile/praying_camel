@@ -17,7 +17,7 @@
 #include "hand.h"
 //#include "handcomparer.h"
 
-#include "cardComparer.h"
+#include "cardComparer.h" //Remove
 
 
 using namespace std;
@@ -27,35 +27,22 @@ const int CARDS_PER_PLAYER = 5;
 
 
 int main(int argc, char *argv[]) {
-    
-	Deck *deck = new Deck();
-	Hand **player = new Hand*[PLAYERS];
-	for(int p = 0; p < PLAYERS; p++){
-		player[p] = new Hand(p+1);
-	}
 
-	cout << "second" << endl;
-	deck->Shuffle();
-	deck->DisplayDeck();
+	Card *card = new Card((Rank)9,(Suit)1);
+		Card *card1 = new Card((Rank)9,(Suit)1);
+		Card *card2 = new Card((Rank)10,(Suit)2);
+		Card *card3 = new Card((Rank)11,(Suit)1);
+		Card *card4 = new Card((Rank)12,(Suit)1);
 
-	for(int d = 0; d < CARDS_PER_PLAYER; d++){
-		for(int p = 0; p < PLAYERS; p++){
-			player[p]->AddCard(deck->DealNextCard());
-		}
-	}
+	Hand player =  Hand(1);
+	player.AddCard(card);
+		player.AddCard(card1);
+		player.AddCard(card2);
+		player.AddCard(card3);
+		player.AddCard(card4);
 
-	for(int i = 0; i < PLAYERS; i++){
-		player[i]->Evaluate();
-		cout << player[i]->ToString() << endl;
-	}
-
-	for(int i = 0; i < PLAYERS; i++){
-		player[i]->ClearHand();
-	}
-
-	for(int i = 0; i < PLAYERS; i++){
-		delete player[i];
-	}
+	player.Evaluate();
+	cout << player.ToString();
 
     
 	return 0;

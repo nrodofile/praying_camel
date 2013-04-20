@@ -21,11 +21,11 @@
          ignoreCount = "50"
          continueAfterRunningActions = "No"
          filePath = "PokerEval/main.cpp"
-         timestampString = "388129156.653139"
+         timestampString = "388136240.637446"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "main(int argc, char *argv[])"
          landmarkType = "7">
       </FileBreakpoint>
@@ -34,39 +34,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PokerEval/main.cpp"
-         timestampString = "388129156.653139"
+         timestampString = "388136240.637446"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "main(int argc, char *argv[])"
          landmarkType = "7">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "PokerEval/deck.cpp"
-         timestampString = "388129236.476502"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
-         landmarkName = "Deck::DealNextCard()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "35"
-         continueAfterRunningActions = "No"
-         filePath = "PokerEval/deck.cpp"
-         timestampString = "388129376.652119"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "57"
-         endingLineNumber = "57"
-         landmarkName = "Deck::DealNextCard()"
-         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
