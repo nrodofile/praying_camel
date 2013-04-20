@@ -27,9 +27,9 @@ enum Rank{
 enum Suit{
     DIAMONDS, CLUBS, HEARTS, SPADES
 };
-const string suits[TOTAL_SUITS] = {"♥", "♦", "♠", "♣"};
+const string SUIT[TOTAL_SUITS] = {"♥", "♦", "♠", "♣"};
 //const string suits[TOTAL_SUITS] = {"H", "D", "S", "C"};
-const string ranks[TOTAL_RANKS] = {"2", "3", "4", "5", "6", "7", "8",
+const string RANK[TOTAL_RANKS] = {"2", "3", "4", "5", "6", "7", "8",
 									"9", "T", "J", "Q", "K", "A"};
 
 class Card{

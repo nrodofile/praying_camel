@@ -14,18 +14,16 @@
  *  Sets player ID  
  */
 Hand::Hand(int playerID){
-	hand = new Card*[CARDS_IN_HAND];
 	this->playerId = playerID;
-	totalCards = 0;
 }
 
 /*
  *	~Hand - Distructor
  *--------------------------------------------------
- *	Deletes the hand vecter
+ *	Deletes the hand vector
  */
 Hand::~Hand(){
-    delete hand;
+
 }
 
 /*
@@ -35,12 +33,11 @@ Hand::~Hand(){
  *	full before adding the card to the hand
  */
 void Hand::AddCard(Card *card){
-	if(totalCards >= CARDS_IN_HAND){
+	if(hand.size() >= CARDS_IN_HAND){
 		cerr << "Player " << to_string(playerId) <<
 				"'s Hand is FULL!!" << endl;
 	}else{
-		hand[totalCards] = card;
-		totalCards++;
+		hand.push_back(card);
 	}
 }
 
@@ -53,29 +50,32 @@ void Hand::AddCard(Card *card){
  */
 void Hand::Evaluate(){
 	
+	sort(hand.begin(), hand.end(), CardComparer());
+	
 }
 
+/*
+ * ClearHand
+ *--------------------------------------------------
+ *  Pre:	The vector is populated with cards
+ *  Post:	All cards are removed from the vector
+ *--------------------------------------------------
+ */
 void Hand::ClearHand(){
-	totalCards = 0;
+	hand.erase(hand.begin(), hand.end());
 }
 
 /*
  *	GetValue
- *--------------------------------------------------
- *  Pre:	the request of the hand
- *  Post:
  *--------------------------------------------------
  *  Returns: The value of the hand
  */
 int Hand::GetValue(){
-	return 0;
+	return value;
 }
 
 /*
- *	GetValue
- *--------------------------------------------------
- *  Pre:	the request of the handType
- *  Post:
+ *	GetHandType
  *--------------------------------------------------
  *  Returns: The hand type of the hand
  */
@@ -93,8 +93,8 @@ HandType Hand::GetHandType(){
  */
 string Hand::ToString(){
 	string playersHand;
-	for (int card = FIRST; card < totalCards; card++){
-		playersHand += hand[card]->ToString() + "\t";
+	for (int card = FIRST; card < hand.size(); card++){
+		playersHand += hand.at(card)->ToString() + "\t";
 	}
 
 	return 	"Player " + to_string(playerId) +

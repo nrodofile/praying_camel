@@ -65,5 +65,5 @@ Suit Card::GetSuit(){
  */
 
 string Card::ToString(){
-    return suits[suit] + ranks[rank];
+    return SUIT[suit] + RANK[rank];
 }

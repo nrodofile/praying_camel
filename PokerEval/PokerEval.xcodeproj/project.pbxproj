@@ -34,6 +34,7 @@
 		22C8F9891720E54D00533E22 /* hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hand.h; sourceTree = "<group>"; };
 		22C8F98B172123E800533E22 /* cardComparer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cardComparer.cpp; sourceTree = "<group>"; };
 		22C8F98C172123E800533E22 /* cardComparer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cardComparer.h; sourceTree = "<group>"; };
+		22C8F9A31722460100533E22 /* Testing */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Testing; sourceTree = "<group>"; };
 		22D0D73A171AAF8200FE8D08 /* PokerEval */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PokerEval; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D0D73D171AAF8200FE8D08 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		22D0D73F171AAF8200FE8D08 /* PokerEval.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = PokerEval.1; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 				22C8F9891720E54D00533E22 /* hand.h */,
 				22C8F98B172123E800533E22 /* cardComparer.cpp */,
 				22C8F98C172123E800533E22 /* cardComparer.h */,
+				22C8F9A31722460100533E22 /* Testing */,
 			);
 			path = PokerEval;
 			sourceTree = "<group>";
