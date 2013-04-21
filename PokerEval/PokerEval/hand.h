@@ -38,13 +38,21 @@ public:
 private:
 	const int CARDS_IN_HAND = 5;
 	const int FIRST = 0;
+	const int FIRST_CARD = 1;
+	vector<Card*> hand;
+	HandType type;
+	enum Kind{
+		FOUR = 4,
+		THREE = 3,
+		PAIR = 2
+	};
 	int playerId;
 	int value;
-	string type;
-	vector<Card*> hand;
-	HandType handType;
 	void EvaluateType();
-	
+	bool IsFlush();
+	bool IsStraight();
+	bool IsN_Of_A_Kind(Kind kind);
+	bool IsPair(Kind kind, bool two);
 };
 
 #endif /* defined(__PokerEval__hand__) */
