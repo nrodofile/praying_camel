@@ -11,8 +11,10 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include "card.h"
 #include "cardComparer.h"
+#include <math.h>
 
 enum HandType{
 	HIGH_CARD, ONE_PAIR, TWO_PAIRS, THREE_OF_A_KIND,
@@ -39,20 +41,28 @@ private:
 	const int CARDS_IN_HAND = 5;
 	const int FIRST = 0;
 	const int FIRST_CARD = 1;
+	const int ONE_CARD = 1;
+	const int ONE_RANK = 1;
 	vector<Card*> hand;
+	vector<Card*>::iterator it;
 	HandType type;
 	enum Kind{
 		FOUR = 4,
 		THREE = 3,
 		PAIR = 2
 	};
-	int playerId;
+
+	int Id;
 	int value;
 	void EvaluateType();
+	void EvaluateValue();
+	void EvalStandard();
+	void EvalKind(Kind kind);
 	bool IsFlush();
 	bool IsStraight();
 	bool IsN_Of_A_Kind(Kind kind);
 	bool IsPair(Kind kind, bool two);
+	double base = 13.0;
 };
 
 #endif /* defined(__PokerEval__hand__) */
