@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 	/// NOTE>>>>> changed argc expression to true
 	
     // allow for testing from file
-    if (argc) {
+    if (argc == 2) {
 		
         // open the file and check it exists
         ifstream infile;
@@ -85,9 +85,9 @@ int main(int argc, char *argv[]) {
 	for (int player = 0; player <  PLAYERS; player++){
 		cout << table.at(player)->ToString() << endl;
 	}
-
 	
-
+	
+	
 	
 	return 0;
 }

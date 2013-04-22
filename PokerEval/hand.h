@@ -60,8 +60,8 @@ private:
 	void EvalKind(Kind kind);
 	bool IsFlush();
 	bool IsStraight();
-	bool IsN_Of_A_Kind(Kind kind);
-	bool IsPair(Kind kind, bool two);
+	bool IsN_Of_A_Kind(Kind kind, bool sort);
+	bool IsPair(Kind kind, bool two, bool sort);
 	double base = 13.0;
 };
 

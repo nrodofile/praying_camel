@@ -67,19 +67,19 @@ void Hand::EvaluateType(){
 	
 	if(IsStraight() && 	IsFlush()){
 		type = STRAIGHT_FLUSH;
-	}else if (IsN_Of_A_Kind(FOUR)){
+	}else if (IsN_Of_A_Kind(FOUR, true)){
 		type = FOUR_OF_A_KIND;
-	}else if (	IsN_Of_A_Kind(THREE) && IsPair(PAIR, false)){
+	}else if (	IsN_Of_A_Kind(THREE, false) && IsPair(PAIR, false, false)){
 		type = FULL_HOUSE;
 	}else if (IsFlush()){
 		type = FLUSH;
 	}else if (IsStraight()){
 		type = STRAIGHT;
-	}else if (IsN_Of_A_Kind(THREE)){
+	}else if (IsN_Of_A_Kind(THREE, true)){
 		type = THREE_OF_A_KIND;
-	}else if (IsPair(PAIR, true)){
+	}else if (IsPair(PAIR, true, false)){
 		type = TWO_PAIRS;
-	}else if (IsPair(PAIR, false)){
+	}else if (IsPair(PAIR, false, false)){
 		type = ONE_PAIR;
 	}else{
 		type = HIGH_CARD;
@@ -197,7 +197,7 @@ bool Hand::IsFlush(){
  *	
  *	Returns: true if the kind is found
  */
-bool Hand::IsN_Of_A_Kind(Kind kind){
+bool Hand::IsN_Of_A_Kind(Kind kind, bool sort){
 	int found = FIRST_CARD;
 	for(int i = 0; i < CARDS_IN_HAND - kind; ++i){
 		for (int card = FIRST; card < kind; card++){
@@ -205,12 +205,14 @@ bool Hand::IsN_Of_A_Kind(Kind kind){
 				hand.at(card+(ONE_CARD+(ONE_CARD * i)))->GetRank()){
 				found++;
 				if(found == kind){
-					for(int j = card + ONE_CARD; j>0; j--){
-						Card *aKind = hand.at(card+ONE_CARD);
-						hand.erase(hand.begin()+(card+ONE_CARD));
-						hand.insert(hand.begin(),aKind);
-					}					
-					return true;
+					if (sort){
+						for(int j = card + ONE_CARD; j>0; j--){
+							Card *aKind = hand.at(card+ONE_CARD);
+							hand.erase(hand.begin()+(card+ONE_CARD));
+							hand.insert(hand.begin(),aKind);
+						}
+					}				
+				return true;
 				}
 			}else{
 				found = ONE_CARD;
@@ -228,33 +230,40 @@ bool Hand::IsN_Of_A_Kind(Kind kind){
  *	Returns: true if a pair is found
  *	Returns: true if 2 pairs are found;
  */
-bool Hand::IsPair(Kind kind, bool twoPairs){
+bool Hand::IsPair(Kind kind, bool twoPairs, bool sort){
 	int found = FIRST_CARD;
 	int pair = 0;
 	for(int card = 0; card < CARDS_IN_HAND - FIRST_CARD; card++){
-		if(hand.at(card)->GetRank() == hand.at(card + ONE_CARD)->GetRank()){
+		Card *card1 = hand.at(card);
+		Card *card2 = hand.at(card + ONE_CARD);
+		
+		if(card1->GetRank() == card2->GetRank()){
 			found++;
 		}else{
 			if(found == kind){
 				pair++;
+				if(sort){
 				Card *pair1 = hand.at(card);
 				Card *pair2 = hand.at(card - ONE_CARD);
 				hand.erase(hand.begin()+card);
 				hand.erase(hand.begin()+(card -ONE_CARD));
 				hand.insert(hand.begin(),pair1);
 				hand.insert(hand.begin(),pair2); 
+				}
 			}
 			found = FIRST_CARD;
 		}
 	}
 	if(found == kind){
 		pair++;
-		Card *pair1 = hand.at(CARDS_IN_HAND-1);
-		Card *pair2 = hand.at(CARDS_IN_HAND - 2);
-		hand.erase(hand.begin()+(CARDS_IN_HAND-1));
-		hand.erase(hand.begin()+(CARDS_IN_HAND - 2));
-		hand.insert(hand.begin(),pair1);
-		hand.insert(hand.begin(),pair2);
+		if(sort){
+			Card *pair1 = hand.at(CARDS_IN_HAND-1);
+			Card *pair2 = hand.at(CARDS_IN_HAND - 2);
+			hand.erase(hand.begin()+(CARDS_IN_HAND-1));
+			hand.erase(hand.begin()+(CARDS_IN_HAND - 2));
+			hand.insert(hand.begin(),pair1);
+			hand.insert(hand.begin(),pair2);
+		}
 	}
 	if(twoPairs && (pair == PAIR)){
 		return true;
@@ -300,13 +309,11 @@ HandType Hand::GetHandType(){
  */
 string Hand::ToString(){
 	sort(hand.begin(), hand.end(), CardComparer());
-	string playersHand;
+	string playersHand = "Player " + to_string(Id) + "\t";
 	for (int card = FIRST; card < hand.size(); card++){
 		playersHand += hand.at(card)->ToString() + "\t";
 	}
 
-	return 	"Player " + to_string(Id) +
-					"\t" + playersHand + HAND_TYPE[type] +
-					"\t" + to_string(value);
+	return playersHand + HAND_TYPE[type];
 }
 

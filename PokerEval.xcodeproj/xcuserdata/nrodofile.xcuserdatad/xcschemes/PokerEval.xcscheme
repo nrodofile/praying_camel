@@ -59,8 +59,12 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = " /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/fullhouse.txt &#10;/Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;Nicholass-Mac-mini:~ nrodofile$ /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;Nicholass-Mac-mini:~ nrodofile$ /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;Nicholass-Mac-mini:~ nrodofile$ /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;/Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt"
-            isEnabled = "YES">
+            argument = " /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/fourofakind.txt &#10;/Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;Nicholass-Mac-mini:~ nrodofile$ /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;Nicholass-Mac-mini:~ nrodofile$ /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;Nicholass-Mac-mini:~ nrodofile$ /Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt &#10;/Users/nrodofile/praying_camel/PokerEval/PokerEval/testing/twopair.txt"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "flush.txt"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
